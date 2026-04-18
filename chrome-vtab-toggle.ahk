@@ -27,14 +27,9 @@ ClickChromeVerticalTabToggle() {
         throw Error("This hotkey only works when Google Chrome is active.")
     }
 
-    WinGetPos(&winX, &winY, , , "ahk_id " hwnd)
-
-    CoordMode("Mouse", "Screen")
     mouseX := 0
     mouseY := 0
     MouseGetPos(&mouseX, &mouseY)
-    clickX := winX + toggleOffsetX
-    clickY := winY + toggleOffsetY
-    Click(clickX, clickY)
+    Click(toggleOffsetX, toggleOffsetY)
     MouseMove(mouseX, mouseY, 0)
 }
